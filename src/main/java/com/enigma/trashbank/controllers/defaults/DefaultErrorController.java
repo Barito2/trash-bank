@@ -1,4 +1,4 @@
-package com.enigma.trashbank.controllers;
+package com.enigma.trashbank.controllers.defaults;
 
 import com.enigma.trashbank.exceptions.PathNotFoundException;
 import org.springframework.boot.web.servlet.error.ErrorController;
