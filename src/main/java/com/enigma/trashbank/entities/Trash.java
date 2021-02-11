@@ -10,9 +10,6 @@ import javax.persistence.*;
 
 @Table
 @Entity
-@Getter
-@Setter
-@NoArgsConstructor
 @SQLDelete(sql = "UPDATE item SET is_deleted = true WHERE id = ?")
 @Where(clause = "is_deleted = false")
 public class Trash extends AbstractEntity<Integer> {
@@ -30,4 +27,38 @@ public class Trash extends AbstractEntity<Integer> {
     @ManyToOne
     @JoinColumn(name = "unit_id", nullable = false)
     private Unit unit;
+
+    @Override
+    public Integer getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(Integer integer) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Integer getPrice() {
+        return price;
+    }
+
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Unit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(Unit unit) {
+        this.unit = unit;
+    }
 }

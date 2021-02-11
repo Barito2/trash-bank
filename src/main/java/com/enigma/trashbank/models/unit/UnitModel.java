@@ -1,11 +1,28 @@
 package com.enigma.trashbank.models.unit;
 
-import com.enigma.trashbank.models.PageSearch;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
-public class UnitSearch extends PageSearch {
 
+public class UnitModel {
+
+    private Integer id;
+
+    @NotBlank
+    @Size(min = 1, max = 10)
     private String code;
+
+    @NotBlank
+    @Size(min = 1, max = 10)
     private String description;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getCode() {
         return code;
