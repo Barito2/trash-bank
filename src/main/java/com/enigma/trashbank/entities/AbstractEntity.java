@@ -1,8 +1,5 @@
 package com.enigma.trashbank.entities;
 
-import lombok.Getter;
-import lombok.Setter;
-
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.PrePersist;
@@ -10,8 +7,6 @@ import javax.persistence.PreUpdate;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-@Getter
-@Setter
 public abstract class AbstractEntity<ID> {
 
     @Column(name = "created_date")
@@ -26,6 +21,30 @@ public abstract class AbstractEntity<ID> {
     public abstract ID getId();
 
     public abstract void setId(ID id);
+
+    public LocalDateTime getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(LocalDateTime createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    public LocalDateTime getModifiedDate() {
+        return modifiedDate;
+    }
+
+    public void setModifiedDate(LocalDateTime modifiedDate) {
+        this.modifiedDate = modifiedDate;
+    }
+
+    public boolean isDeleted() {
+        return isDeleted;
+    }
+
+    public void setDeleted(boolean deleted) {
+        isDeleted = deleted;
+    }
 
     @PrePersist
     public void prePersist() {
