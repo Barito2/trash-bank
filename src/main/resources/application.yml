@@ -1,4 +1,5 @@
 application.data-dir: ~/assets
+jwt.secret: techgeeknext
 server.port: ${PORT:8080}
 spring:
   datasource:
@@ -6,6 +7,7 @@ spring:
     url: jdbc:${DB_PROTO:mysql}://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:db_trashbank}?serverTimezone=UTC
     username: ${DB_USER:root}
     password: ${DB_PASS:admin}
+    initialization-mode: always
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true

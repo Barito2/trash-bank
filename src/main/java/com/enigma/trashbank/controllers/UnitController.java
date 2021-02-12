@@ -19,6 +19,7 @@ import java.util.stream.Collectors;
 
 @RequestMapping("/units")
 @RestController
+@CrossOrigin()
 public class UnitController {
 
     @Autowired
