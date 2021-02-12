@@ -1,4 +1,4 @@
-package com.enigma.trashbank.models.Trash;
+package com.enigma.trashbank.models.trash;
 
 public class TrashElement {
     private Integer id;

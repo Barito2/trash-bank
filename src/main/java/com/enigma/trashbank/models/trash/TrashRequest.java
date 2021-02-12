@@ -1,4 +1,4 @@
-package com.enigma.trashbank.models.Trash;
+package com.enigma.trashbank.models.trash;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
