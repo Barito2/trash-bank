@@ -1,10 +1,12 @@
 package com.enigma.trashbank.controllers;
 
 import com.enigma.trashbank.entities.Saldo;
+import com.enigma.trashbank.entities.SaldoSummary;
 import com.enigma.trashbank.models.PagedList;
 import com.enigma.trashbank.models.ResponseMessage;
 import com.enigma.trashbank.models.saldo.SaldoElement;
 import com.enigma.trashbank.models.saldo.SaldoSearch;
+import com.enigma.trashbank.models.saldo.SaldoSummaryResponse;
 import com.enigma.trashbank.models.trash.TrashElement;
 import com.enigma.trashbank.models.trash.TrashSearch;
 import com.enigma.trashbank.services.SaldoService;
@@ -59,6 +61,18 @@ public class SaldoController {
                 entityPage.getTotalPages(),
                 entityPage.getSize(),
                 entityPage.getTotalElements());
+
+        return ResponseMessage.success(data);
+    }
+
+    @Operation(summary = "Get all saldo summary", description = "Get all saldo summary data", tags = {"saldo"})
+    @GetMapping(value = "/summaries", produces = "application/json")
+    public ResponseMessage<List<SaldoSummaryResponse>> findAllSummaries() {
+        List<SaldoSummary> summaries = service.findAllSummaries();
+
+        List<SaldoSummaryResponse> data = summaries.stream()
+                .map(e -> modelMapper.map(e, SaldoSummaryResponse.class))
+                .collect(Collectors.toList());
 
         return ResponseMessage.success(data);
     }

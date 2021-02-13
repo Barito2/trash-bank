@@ -1,17 +1,34 @@
 package com.enigma.trashbank.models.saldo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
+import com.enigma.trashbank.models.member.MemberModel;
 
 public class SaldoSummaryResponse {
 
-    private Integer memberId;
-    private String memberName;
-    private String genderName;
-    private String phoneName;
-    private String addressName;
+    private MemberModel member;
+    private Long nominal;
+
+    public SaldoSummaryResponse(MemberModel member, Long nominal) {
+        this.member = member;
+        this.nominal = nominal;
+    }
+
+    public SaldoSummaryResponse() {
+    }
+
+    public MemberModel getMember() {
+        return member;
+    }
+
+    public void setMember(MemberModel member) {
+        this.member = member;
+    }
+
+    public Long getNominal() {
+        return nominal;
+    }
+
+    public void setNominal(Long nominal) {
+        this.nominal = nominal;
+    }
 
 }

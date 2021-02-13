@@ -2,20 +2,20 @@ package com.enigma.trashbank.entities;
 
 public class SaldoSummary {
 
-    private Saldo saldo;
+    private Member member;
     private Long nominal;
 
-    public SaldoSummary(Saldo saldo, Long nominal) {
-        this.saldo = saldo;
+    public SaldoSummary(Member member, Long nominal) {
+        this.member = member;
         this.nominal = nominal;
     }
 
-    public Saldo getSaldo() {
-        return saldo;
+    public Member getMember() {
+        return member;
     }
 
-    public void setSaldo(Saldo saldo) {
-        this.saldo = saldo;
+    public void setMember(Member member) {
+        this.member = member;
     }
 
     public Long getNominal() {

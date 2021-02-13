@@ -61,16 +61,4 @@ public class TransactionController {
         return ResponseMessage.success(data);
     }
 
-    @Operation(summary = "Get all stock summary", description = "Get all stock summary data", tags = {"stock"})
-    @GetMapping(value = "/summaries", produces = "application/json")
-    public ResponseMessage<List<SaldoSummaryResponse>> findAllSummaries() {
-        List<SaldoSummary> summaries = saldoService.findAllSummaries();
-
-        List<SaldoSummaryResponse> data = summaries.stream()
-                .map(e -> modelMapper.map(e, SaldoSummaryResponse.class))
-                .collect(Collectors.toList());
-
-        return ResponseMessage.success(data);
-    }
-
 }
