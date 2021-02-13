@@ -2,16 +2,17 @@ package com.enigma.trashbank.models.saldo;
 
 
 import com.enigma.trashbank.models.PageSearch;
+import com.enigma.trashbank.models.member.MemberSearch;
 
 public class SaldoSearch extends PageSearch {
 
-    private String name;
+    private MemberSearch member;
 
-    public String getName() {
-        return name;
+    public MemberSearch getMember() {
+        return member;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setMember(MemberSearch member) {
+        this.member = member;
     }
 }

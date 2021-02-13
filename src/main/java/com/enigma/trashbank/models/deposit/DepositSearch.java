@@ -2,16 +2,17 @@ package com.enigma.trashbank.models.deposit;
 
 
 import com.enigma.trashbank.models.PageSearch;
+import com.enigma.trashbank.models.trash.TrashSearch;
 
 public class DepositSearch extends PageSearch {
 
-    private String name;
+    private TrashSearch trash;
 
-    public String getName() {
-        return name;
+    public TrashSearch getTrash() {
+        return trash;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTrash(TrashSearch trash) {
+        this.trash = trash;
     }
 }

@@ -1,12 +1,11 @@
 package com.enigma.trashbank.models.saldo;
 
 import com.enigma.trashbank.models.member.MemberModel;
-import com.enigma.trashbank.models.trash.TrashElement;
 
 public class SaldoElement {
     private Integer id;
     private MemberModel member;
-    private Long saldo;
+    private Long nominal;
 
     public Integer getId() {
         return id;
@@ -24,11 +23,11 @@ public class SaldoElement {
         this.member = member;
     }
 
-    public Long getSaldo() {
-        return saldo;
+    public Long getNominal() {
+        return nominal;
     }
 
-    public void setSaldo(Long saldo) {
-        this.saldo = saldo;
+    public void setNominal(Long nominal) {
+        this.nominal = nominal;
     }
 }
